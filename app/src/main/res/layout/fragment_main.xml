@@ -10,7 +10,7 @@
     tools:context="io.github.iurimenin.MainActivityFragment">
 
     <TextView
-        android:id="@+id/instructions_text_view"
+        android:id="@+id/instructions_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/instructions" />
@@ -18,11 +18,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/instructions_text_view"
-        android:onClick="tellJoke"
-        android:text="@string/button_text"
-
-        />
+        android:layout_below="@+id/instructions_textview"
+        android:onClick="launchJokeActivity"
+        android:text="@string/button_text" />
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
