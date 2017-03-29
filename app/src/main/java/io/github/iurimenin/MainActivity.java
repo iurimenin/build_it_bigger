@@ -3,6 +3,8 @@ package io.github.iurimenin;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
+import android.text.Spanned;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     public void launchJokeActivity(View view) {
         Intent intent = new Intent(this, JokeActivity.class);
         Jokes jokes = new Jokes();
-        String joke = jokes.getJoke();
+        String joke = Html.fromHtml(jokes.getJoke()).toString();
         intent.putExtra(JokeActivity.JOKE_KEY, joke);
         startActivity(intent);
     }
