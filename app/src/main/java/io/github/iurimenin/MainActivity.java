@@ -4,14 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
-import android.text.Spanned;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.udacity.gradle.builditbigger.R;
 
-import io.github.iurimenin.javalib.Jokes;
 import io.github.iurimenin.jokedisplay.JokeActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -45,11 +43,14 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void launchJokeActivity(View view) {
+    public void launchJokeActivity(String joke) {
         Intent intent = new Intent(this, JokeActivity.class);
-        Jokes jokes = new Jokes();
-        String joke = Html.fromHtml(jokes.getJoke()).toString();
-        intent.putExtra(JokeActivity.JOKE_KEY, joke);
+        intent.putExtra(JokeActivity.JOKE_KEY, Html.fromHtml(joke).toString());
         startActivity(intent);
+    }
+
+    public void getJoke (View view) {
+
+        new JokesAsyncTaks(this).execute();
     }
 }

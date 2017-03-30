@@ -19,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/instructions_textview"
-        android:onClick="launchJokeActivity"
+        android:onClick="getJoke"
         android:text="@string/button_text" />
 
     <com.google.android.gms.ads.AdView
